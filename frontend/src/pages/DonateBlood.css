@@ -1,0 +1,78 @@
+/* ✅ Donation Form Container */
+.donate-container {
+  width: 50%;
+  margin: auto;
+  padding: 40px;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.form-title {
+  font-size: 2em;
+  color: #d32f2f;
+  margin-bottom: 20px;
+}
+
+/* ✅ Form Fields */
+.donate-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.donate-form input,
+.donate-form select {
+  padding: 12px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.donate-form select {
+  background-color: #fff;
+}
+
+/* ✅ Submit Button */
+.donate-button {
+  padding: 12px;
+  font-size: 1.1em;
+  font-weight: bold;
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.donate-button:hover {
+  background-color: #a52828;
+  transform: scale(1.05);
+}
+
+/* ✅ Message Styling */
+.form-message {
+  margin-top: 15px;
+  font-size: 1.1em;
+  color: #d32f2f;
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 768px) {
+  .donate-container {
+    width: 90%;
+    padding: 30px;
+  }
+
+  .donate-form input,
+  .donate-form select {
+    font-size: 1em;
+  }
+
+  .donate-button {
+    font-size: 1em;
+  }
+}

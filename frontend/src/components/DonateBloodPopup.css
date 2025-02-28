@@ -1,0 +1,88 @@
+/* ===== Popup Background Overlay ===== */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== Popup Box (White Container) ===== */
+.popup-modal {
+  background: white;
+  padding: 25px;
+  width: 380px;  /* Fixed width */
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  position: relative; /* Ensure close button stays inside */
+}
+
+/* ===== Input Fields (Fix width & spacing) ===== */
+.popup-modal input {
+  width: 95%; /* Ensure fields are not too big */
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* ===== Buttons Styling ===== */
+.action-btn {
+  width: 100%;
+  padding: 12px;
+  background: #e53935;
+  color: white;
+  font-size: 1.1em;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+
+.action-btn:hover {
+  background: #c62828;
+}
+
+/* ===== Close Button (Inside Popup) ===== */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.3em;
+  cursor: pointer;
+  color: #e53935;
+}
+
+.close-btn:hover {
+  color: #c62828;
+}
+
+/* ===== Switch Between Sign In & Sign Up ===== */
+.toggle-btn {
+  background: none;
+  border: none;
+  color: #e53935;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.toggle-btn:hover {
+  text-decoration: underline;
+}
+
+/* ===== Responsive Popup ===== */
+@media (max-width: 400px) {
+  .popup-modal {
+    width: 90%;
+    padding: 20px;
+  }
+}

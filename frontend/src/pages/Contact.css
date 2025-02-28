@@ -1,0 +1,15 @@
+/* Ensure content doesn't go behind the navbar */
+.contact {
+    padding-top: 100px; /* Adjust according to your navbar height */
+    text-align: center;
+  }
+  
+  .contact h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .contact p {
+    font-size: 18px;
+  }
+  

@@ -1,0 +1,76 @@
+/* ===== Navbar Full Width & Fixed at Top ===== */
+.navbar {
+  width: 100vw;
+  height: 70px;
+  background: #d32f2f;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== Flexbox Container for Navbar ===== */
+.navbar-container {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ===== Logo & Title on the Left ===== */
+.logo-title {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+  margin-right: 10px;
+}
+
+/* ===== Navigation Links in the Center ===== */
+.nav-links {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 0 20px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* ===== Sign In Button on the Right ===== */
+.signin-btn a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  background: #c62828;
+  transition: 0.3s ease;
+}
+
+.signin-btn a:hover {
+  background: #b71c1c;
+}
+
+/* ===== Responsive Navbar (For Mobile Screens) ===== */
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links {
+    margin-top: 10px;
+  }
+}

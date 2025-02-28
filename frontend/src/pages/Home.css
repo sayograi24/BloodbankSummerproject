@@ -1,0 +1,302 @@
+/* ✅ Full-width background */
+.home {
+  width: 100%;
+  padding-top: 80px;
+  background-color: #f8f9fa;
+}
+
+/* ✅ Slider Section */
+.intro {
+  width: 100%;
+  background-color: white;
+  padding: 3em 0;
+  display: flex;
+  justify-content: center;
+}
+
+.slider-container {
+  width: 90%;
+  max-width: 1400px;
+  padding: 20px 0;
+  position: relative;
+}
+
+/* ✅ Fix height for all slides */
+.intro-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 30px;
+  min-height: 450px;
+}
+
+/* ✅ Image & Text Wrapper */
+.intro-image-text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* ✅ Image on Left */
+.intro-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.intro-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* ✅ Text on Right */
+.intro-text {
+  flex: 1;
+  text-align: left;
+  padding: 2em;
+  color: #333;
+}
+
+.intro-text h2 {
+  font-size: 2.5em;
+  color: #d32f2f;
+  font-weight: bold;
+}
+
+.intro-text p {
+  font-size: 1.2em;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+/* ✅ Donate Now Button */
+.cta-button {
+  display: inline-block;
+  background-color: #d32f2f;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1.1em;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+  background-color: #a52828;
+  transform: scale(1.05);
+}
+
+/* ✅ Fix Navigation Arrows */
+.slider-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #d32f2f;
+  font-size: 3em;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  transition: background 0.3s ease, color 0.3s ease;
+  z-index: 10;
+}
+
+.prev-button {
+  left: -50px;
+}
+
+.next-button {
+  right: -50px;
+}
+
+/* ✅ Move Dots Inside Slider */
+.slick-dots {
+  position: absolute;
+  bottom: 15px !important;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.slick-dots li button:before {
+  font-size: 12px !important;
+  color: #999 !important;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #d32f2f !important;
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 768px) {
+  .slider-nav {
+    font-size: 2.5em;
+  }
+  .prev-button {
+    left: -30px;
+  }
+  .next-button {
+    right: -30px;
+  }
+}
+
+/* ✅ Section Titles */
+.section-title {
+  font-size: 2.5em;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  font-size: 1.2em;
+  color: #555;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+
+/* ✅ Why Donate Blood Section */
+.why-donate {
+  padding: 60px 0;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.why-donate .section-title {
+  color: #d32f2f;
+}
+
+.why-donate .benefits {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.benefit-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.benefit-icon-circle {
+  width: 80px;
+  height: 80px;
+  background-color: #d32f2f;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+}
+
+.benefit-icon {
+  font-size: 2em;
+  color: white;
+}
+
+/* ✅ How to Donate Section */
+.how-to-donate {
+  padding: 60px 0;
+  background-color: #fff;
+  text-align: center;
+}
+
+.how-to-donate .steps {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.step-card {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.step-number {
+  width: 40px;
+  height: 40px;
+  background-color: #d32f2f;
+  color: white;
+  font-size: 1.5em;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px;
+}
+
+/* ✅ Donors List Section */
+.donors-list {
+  padding: 60px 0;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+/* ✅ Donor Cards */
+.donor-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.donor-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 280px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.donor-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ✅ Donor Image */
+.donor-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+/* ✅ Responsive Fix */
+@media (max-width: 768px) {
+  .how-to-donate .steps,
+  .donor-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
