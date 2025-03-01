@@ -1,8 +1,8 @@
-/* ===== Navbar Full Width & Fixed at Top ===== */
+/* ✅ Full-Width Fixed Navbar */
 .navbar {
-  width: 100vw;
-  height: 70px;
-  background: #d32f2f;
+  width: 100%;
+  height: 75px;
+  background: #d32f2f; /* Solid red background */
   position: fixed;
   top: 0;
   left: 0;
@@ -10,20 +10,37 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* ===== Flexbox Container for Navbar ===== */
+/* ✅ Navbar Container */
 .navbar-container {
   width: 90%;
+  max-width: 1300px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 20px;
 }
 
-/* ===== Logo & Title on the Left ===== */
+/* ✅ Remove the white gap below navbar */
+body {
+  margin: 0;
+  padding: 0;
+  padding-top: 75px; /* Prevent content from going under the navbar */
+}
+
+/* ✅ Logo & Title */
 .logo-title {
   display: flex;
   align-items: center;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
 }
 
 .logo {
@@ -31,7 +48,14 @@
   margin-right: 10px;
 }
 
-/* ===== Navigation Links in the Center ===== */
+.brand-name {
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* ✅ Navigation Links */
 .nav-links {
   display: flex;
   list-style: none;
@@ -42,35 +66,117 @@
   margin: 0 20px;
 }
 
-.nav-links li a {
+.nav-item {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  font-size: 1.1em;
+  position: relative;
+  transition: color 0.3s ease-in-out;
 }
 
-/* ===== Sign In Button on the Right ===== */
-.signin-btn a {
-  color: white;
+.nav-item:hover {
+  color: #ffe082;
+}
+
+/* 🏆 Smooth Underline Hover Effect */
+.nav-item::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background: white;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-item:hover::after {
+  width: 100%;
+}
+
+/* ✅ Authentication Button Container */
+.auth-btn {
+  display: flex;
+  align-items: center;
+}
+
+/* ✅ Sign In Button Styling */
+.signin-btn {
+  display: inline-block;
+  color: #d32f2f;
   font-weight: bold;
   text-decoration: none;
   padding: 8px 15px;
   border-radius: 5px;
-  background: #c62828;
-  transition: 0.3s ease;
+  background: white;
+  font-size: 1em;
+  transition: 0.3s ease-in-out;
 }
 
-.signin-btn a:hover {
-  background: #b71c1c;
+.signin-btn:hover {
+  background: #ffe082;
+  color: #b71c1c;
+  transform: scale(1.1);
 }
 
-/* ===== Responsive Navbar (For Mobile Screens) ===== */
-@media (max-width: 768px) {
+/* ✅ Sign Out Button */
+.signout-btn {
+  background-color: white;
+  color: #d32f2f;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  font-size: 1em;
+}
+
+.signout-btn:hover {
+  background-color: #b71c1c;
+  color: white;
+  transform: scale(1.1);
+}
+
+/* ✅ Mobile Responsive Fix */
+@media (max-width: 900px) {
   .navbar-container {
     flex-direction: column;
     align-items: center;
+    padding: 10px 0;
   }
 
   .nav-links {
     margin-top: 10px;
+  }
+
+  .nav-links li {
+    margin: 5px 15px;
+  }
+
+  .auth-btn {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav-item {
+    font-size: 1em;
+  }
+
+  .brand-name {
+    font-size: 1.3em;
+  }
+
+  .signin-btn, .signout-btn {
+    padding: 8px 15px;
+    font-size: 1em;
   }
 }

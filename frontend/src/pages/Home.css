@@ -1,15 +1,22 @@
-/* ✅ Full-width background */
-.home {
-  width: 100%;
-  padding-top: 80px;
+/* ✅ Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
   background-color: #f8f9fa;
+  color: #333;
 }
 
-/* ✅ Slider Section */
+.home {
+  width: 100%;
+  padding-top: 5px;
+}
+
+/* 🔥 SLIDER SECTION */
 .intro {
   width: 100%;
   background-color: white;
-  padding: 3em 0;
+  padding: 60px 0;
   display: flex;
   justify-content: center;
 }
@@ -17,21 +24,20 @@
 .slider-container {
   width: 90%;
   max-width: 1400px;
-  padding: 20px 0;
+  margin: auto;
   position: relative;
 }
 
-/* ✅ Fix height for all slides */
 .intro-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
-  padding: 30px;
+  gap: 30px;
+  padding: 40px;
   min-height: 450px;
 }
 
-/* ✅ Image & Text Wrapper */
+/* ✅ Image and Text Alignment */
 .intro-image-text {
   display: flex;
   align-items: center;
@@ -39,21 +45,16 @@
   width: 100%;
 }
 
-/* ✅ Image on Left */
-.intro-image {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
-
+/* ✅ Image Sizing */
 .intro-image img {
   width: 100%;
-  max-width: 500px;
-  border-radius: 10px;
+  max-width: 600px;
+  height: 400px;
   object-fit: cover;
+  border-radius: 10px;
 }
 
-/* ✅ Text on Right */
+/* ✅ Text Section */
 .intro-text {
   flex: 1;
   text-align: left;
@@ -75,10 +76,9 @@
 
 /* ✅ Donate Now Button */
 .cta-button {
-  display: inline-block;
   background-color: #d32f2f;
   color: white;
-  padding: 10px 20px;
+  padding: 12px 20px;
   font-size: 1.1em;
   font-weight: bold;
   border: none;
@@ -92,7 +92,7 @@
   transform: scale(1.05);
 }
 
-/* ✅ Fix Navigation Arrows */
+/* ✅ Navigation Arrows */
 .slider-nav {
   position: absolute;
   top: 50%;
@@ -116,185 +116,631 @@
   right: -50px;
 }
 
-/* ✅ Move Dots Inside Slider */
+/* ✅ Dots for Slider */
 .slick-dots {
-  position: absolute;
   bottom: 15px !important;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.slick-dots li button:before {
-  font-size: 12px !important;
-  color: #999 !important;
 }
 
 .slick-dots li.slick-active button:before {
   color: #d32f2f !important;
 }
 
-/* ✅ Responsive Design */
-@media (max-width: 768px) {
-  .slider-nav {
-    font-size: 2.5em;
-  }
-  .prev-button {
-    left: -30px;
-  }
-  .next-button {
-    right: -30px;
-  }
-}
 
-/* ✅ Section Titles */
-.section-title {
-  font-size: 2.5em;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.section-subtitle {
-  font-size: 1.2em;
-  color: #555;
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 30px;
-}
-
-/* ✅ Why Donate Blood Section */
+/* 🔥 WHY DONATE BLOOD */
+/* ✅ Section Styling */
 .why-donate {
-  padding: 60px 0;
-  background-color: #f8f9fa;
+  background-color: #fff;
+  padding: 80px 0;
   text-align: center;
 }
 
-.why-donate .section-title {
-  color: #d32f2f;
+/* ✅ Title */
+.section-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #d9534f;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
 }
 
-.why-donate .benefits {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
+/* ✅ Benefits Grid */
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 25px;
+  max-width: 1100px;
+  margin: auto;
 }
 
+/* ✅ Benefit Card */
 .benefit-card {
   background: white;
-  padding: 20px;
   border-radius: 10px;
-  width: 300px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
   text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .benefit-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* ✅ Icon Circle */
 .benefit-icon-circle {
-  width: 80px;
-  height: 80px;
-  background-color: #d32f2f;
+  width: 60px;
+  height: 60px;
+  background-color: #d9534f; /* Red circle */
+  color: white;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* ✅ Icons Inside the Circle */
 .benefit-icon {
-  font-size: 2em;
-  color: white;
+  font-size: 1.8em;
+  color:white;
 }
 
-/* ✅ How to Donate Section */
+/* ✅ Title Styling */
+.benefit-title {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* ✅ Text */
+.benefit-card p {
+  font-size: 1em;
+  color: #555;
+  margin: 5px 0;
+}
+
+/* ✅ Responsive Fix */
+@media (max-width: 768px) {
+  .benefits {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* 🔥 HOW TO DONATE BLOOD - NEW DESIGN */
 .how-to-donate {
+  width: 100%;
+  background-color: white;
   padding: 60px 0;
-  background-color: #fff;
-  text-align: center;
-}
-
-.how-to-donate .steps {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
 }
 
+.how-to-donate .container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.how-to-donate .section-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #d9534f;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+
+/* ✅ Steps Container */
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+/* ✅ Step Cards */
 .step-card {
-  background: #f8f9fa;
-  padding: 20px;
-  border-radius: 10px;
-  width: 250px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  width: 280px;
   text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .step-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-.step-number {
-  width: 40px;
-  height: 40px;
-  background-color: #d32f2f;
+/* ✅ Step Icons (Numbers) */
+.step-icon {
+  width: 60px;
+  height: 60px;
+  background-color: #d9534f;
   color: white;
-  font-size: 1.5em;
+  font-size: 22px;
   font-weight: bold;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 10px;
+  margin: 0 auto 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* ✅ Donors List Section */
+/* ✅ Step Titles */
+.step-card h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #d9534f;
+}
+
+/* ✅ Step Descriptions */
+.step-card p {
+  font-size: 15px;
+  color: #555;
+  margin: 5px 0;
+}
+
+/* 🔥 DONORS LIST */
+/* ✅ Fix "Recent Donors" Overlap Issue */
 .donors-list {
-  padding: 60px 0;
   background-color: #f8f9fa;
+  padding: 100px 0 80px;  /* Increased top padding */
   text-align: center;
 }
 
-/* ✅ Donor Cards */
+/* ✅ Donor Cards Layout */
 .donor-cards {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
+  gap: 25px;
 }
 
+/* ✅ Donor Card */
 .donor-card {
   background: white;
-  padding: 20px;
-  border-radius: 10px;
-  width: 280px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  padding: 30px;
+  width: 320px;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transition: transform 0.3s ease-in-out;
 }
 
 .donor-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* ✅ Donor Image */
-.donor-image {
-  width: 100px;
-  height: 100px;
+/* ✅ Blood Group Circle */
+.blood-group-circle {
+  width: 70px;
+  height: 70px;
+  background-color: #d9534f;
+  color: white;
+  font-size: 1.5em;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ✅ Donor Logo */
+.donor-logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 50px auto 10px; /* Added space below the blood group */
+}
+
+/* ✅ Donor Name */
+.donor-name {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #d9534f;
+  border-bottom: 2px solid #d9534f;
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-top: 10px;
+}
+
+/* ✅ Call Button */
+.call-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #d9534f;
+  color: white;
+  padding: 12px;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-top: 15px;
+  text-decoration: none;
+  transition: background 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.call-button:hover {
+  background-color: #a52828;
+}
+
+/* ✅ Call Icon */
+.call-icon {
+  font-size: 1.2em;
+}
+
+
+/* 🔥 Testimonials Section */
+/* ✅ Testimonials Section */
+.testimonials {
+  width: 100%;
+  padding: 80px 0;
+  text-align: center;
+  background-color: #f8f9fa; /* Light background for contrast */
+}
+
+/* ✅ Title */
+.section-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #d9534f;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+
+/* ✅ Testimonial Card */
+.testimonial-card {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+  position: relative;
+}
+
+.testimonial-card:hover {
+  transform: scale(1.03);
+}
+
+/* ✅ Quote Icon */
+.quote-icon {
+  font-size: 2.5em;
+  color: #d9534f;
   margin-bottom: 10px;
+}
+
+/* ✅ Testimonial Message */
+.testimonial-message {
+  font-size: 1.2em;
+  font-style: italic;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* ✅ User Image */
+.testimonial-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 10px;
+  border: 3px solid #d9534f;
+}
+
+/* ✅ Testimonial Author */
+.testimonial-author {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #d9534f;
+}
+
+/* ✅ Slick Dots Styling */
+.slick-dots li.slick-active button:before {
+  color: #d9534f !important;
+}
+
+.slick-dots {
+  bottom: -30px !important;
 }
 
 /* ✅ Responsive Fix */
 @media (max-width: 768px) {
-  .how-to-donate .steps,
+  .testimonial-message {
+    font-size: 1em;
+  }
+  .testimonial-author {
+    font-size: 1em;
+  }
+}
+
+
+/* ✅ Donor Card */
+.donor-card {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+
+.donor-card:hover {
+  transform: scale(1.05);
+}
+
+/* ✅ Blood Group Circle */
+.blood-group-circle {
+  width: 70px;
+  height: 70px;
+  background-color: #d9534f;  /* Red color */
+  color: white;
+  font-size: 1.5em;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ✅ Donor Logo */
+.donor-logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 50px auto 10px; /* Spacing below the blood group */
+}
+
+/* ✅ Donor Name */
+.donor-name {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #d9534f;   /* Red */
+  border-bottom: 2px solid #d9534f;
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-top: 10px;
+}
+
+/* ✅ Donor Info */
+.donor-info {
+  margin-top: 15px;
+  font-size: 1em;
+  color: #444;
+}
+
+.donor-info p {
+  margin: 5px 0;
+}
+
+/* ✅ Call Button */
+.call-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #28a745;  /* Green button */
+  color: white;
+  padding: 10px 15px;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-top: 15px;
+  text-decoration: none;
+  transition: background 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.call-button:hover {
+  background-color: #218838;
+}
+
+/* ✅ Call Icon */
+.call-icon {
+  font-size: 1.2em;
+}
+
+.section-title{
+  color:#a52828;
+}
+/* 🔥 WHY DONATE BLOOD SECTION */
+.why-donate {
+  background-color: white;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.why-donate .container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #d9534f;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+
+/* ✅ Benefits Grid */
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* ✅ Benefit Card */
+.benefit-card {
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ✅ Icons & Text */
+.benefit-icon {
+  font-size: 1.8em;
+  color: #ffffff;
+  
+}
+
+.benefit-title {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.benefit-card p {
+  font-size: 1em;
+  color: #555;
+  margin: 5px 0;
+}
+
+/* ✅ Responsive Fix */
+@media (max-width: 768px) {
+  .benefits {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 🔥 RECENT DONORS SECTION */
+.donors-list {
+  background-color: #f8f9fa;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.donor-cards {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+/* ✅ Donor Card */
+.donor-card {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+
+.donor-card:hover {
+  transform: scale(1.05);
+}
+
+/* ✅ Blood Group Circle */
+.blood-group-circle {
+  width: 60px;
+  height: 60px;
+  background-color: #990500;
+  color: white;
+  font-size: 1.3em;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ✅ Call Button */
+.call-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #28a745;
+  color: white;
+  padding: 10px;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-top: 10px;
+  text-decoration: none;
+  transition: background 0.3s ease-in-out;
+}
+
+.call-button:hover {
+  background-color: #218838;
+}
+
+/* 🔥 Show More & Find All Donors Buttons */
+.donor-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.show-more-btn, .show-less-btn, .find-all-btn {
+  background-color: #d9534f;
+  color: white;
+  padding: 12px 20px;
+  font-size: 1em;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.show-more-btn:hover, .show-less-btn:hover, .find-all-btn:hover {
+  background-color: #b71c1c;
+}
+
+/* ✅ Responsive Fix */
+@media (max-width: 768px) {
   .donor-cards {
     flex-direction: column;
     align-items: center;

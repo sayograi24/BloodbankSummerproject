@@ -1,15 +1,291 @@
-/* Ensure content doesn't go behind the navbar */
+/* ✅ Contact Section */
 .contact {
-    padding-top: 100px; /* Adjust according to your navbar height */
-    text-align: center;
+  padding: 100px 20px;
+  background-color: white;
+  text-align: center;
+}
+
+/* ✅ Title Styling */
+.contact h2 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #d9534f;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+/* 🔥 Contact Details */
+.contact-details {
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.contact-details p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+.contact-details a {
+  color: #d9534f;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact-details a:hover {
+  text-decoration: underline;
+}
+
+/* 🔥 Contact Form & Map (Side by Side) */
+.contact-container {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* ✅ Contact Form */
+.contact-form {
+  width: 50%;
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+/* ✅ Form Group */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* ✅ Labels */
+.form-group label {
+  font-size: 16px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+/* ✅ Input & Textarea */
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+}
+
+/* ✅ Input Focus Effect */
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #d9534f;
+}
+
+/* ✅ Textarea Sizing */
+.form-group textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+/* ✅ Submit Button */
+.submit-button {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.submit-button:hover {
+  background-color: #a52828;
+  transform: scale(1.05);
+}
+
+/* ✅ Success Message */
+.success-message {
+  font-size: 18px;
+  color: green;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 15px;
+}
+
+/* 🔥 Google Map Section */
+.map-container {
+  width: 50%;
+  text-align: center;
+}
+
+/* ✅ Map Title */
+.map-container h3 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #d9534f;
+  margin-bottom: 20px;
+}
+
+/* ✅ Google Map */
+.google-map {
+  width: 100%;
+  height: 350px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 🔥 Social Media Icons */
+.social-media {
+  margin-top: 30px;
+}
+
+.social-media h3 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #d9534f;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-icons a {
+  font-size: 30px;
+  color: #333;
+  transition: color 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+  color: #d9534f;
+}
+
+/* 🔥 WhatsApp Chat Button */
+/* 🔥 Floating WhatsApp Button */
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: white;
+  padding: 12px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 50px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+/* ✅ WhatsApp Icon */
+.whatsapp-icon {
+  font-size: 24px;
+}
+
+/* ✅ Hover Effect */
+.whatsapp-button:hover {
+  background-color: #1ebc5b;
+  transform: scale(1.1);
+}
+
+/* ✅ Responsive Fix for Small Screens */
+@media (max-width: 600px) {
+  .whatsapp-button {
+      bottom: 15px;
+      right: 15px;
+      font-size: 16px;
+      padding: 10px 15px;
   }
-  
-  .contact h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
+
+  .whatsapp-icon {
+      font-size: 20px;
   }
-  
-  .contact p {
-    font-size: 18px;
+}
+
+/* 🔥 Responsive Design */
+@media (max-width: 992px) {
+  .contact-container {
+      flex-direction: column;
+      align-items: center;
   }
-  
+
+  .contact-form, .map-container {
+      width: 100%;
+  }
+
+  .google-map {
+      height: 300px;
+  }
+}
+
+/* ✅ Working Hours */
+.working-hours {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.working-hours h3 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #d9534f;
+}
+
+.working-hours p {
+  font-size: 18px;
+  color: #444;
+}
+
+/* ✅ FAQ Section */
+.faq {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.faq h3 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #d9534f;
+}
+
+.faq p {
+  font-size: 18px;
+  color: #444;
+}
+
+/* ✅ Loading Animation */
+.submit-button:disabled {
+  background-color: #a52828;
+  cursor: not-allowed;
+}
+
+/* ✅ Social Icons Hover */
+.social-icons a {
+  font-size: 30px;
+  color: #333;
+  transition: color 0.3s ease-in-out, transform 0.2s;
+}
+
+.social-icons a:hover {
+  color: #d9534f;
+  transform: scale(1.1);
+}

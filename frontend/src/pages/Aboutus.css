@@ -1,0 +1,225 @@
+/* 🔥 Global Styles */
+.about-us {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+  }
+  
+  /* 🔥 Hero Section */
+  .hero-section {
+    background: url("../assets/images/blooddonation.jpg") center/cover no-repeat;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+  }
+  
+  .hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+  }
+  
+  .hero-content p {
+    font-size: 1.2em;
+    margin-top: 10px;
+  }
+  
+  /* 🔥 Mission Section */
+  .mission-section {
+    padding: 60px 20px;
+    text-align: center;
+    background: white;
+  }
+  
+  .mission-section h2 {
+    color: #d9534f;
+    font-size: 2em;
+  }
+  
+  .mission-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+  }
+  
+  .mission-card {
+    background: #d9534f;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 200px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .mission-card h3 {
+    margin-top: 10px;
+  }
+  
+  .mission-card svg {
+    font-size: 2em;
+  }
+  
+  /* 🔥 Why Choose Us */
+  .why-choose {
+    padding: 60px 20px;
+    text-align: center;
+    background: #f8f9fa;
+  }
+  
+  .why-choose h2 {
+    color: #d9534f;
+    font-size: 2em;
+  }
+  
+  .why-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+  }
+  
+  .why-card {
+    background: white;
+    color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 250px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .why-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .why-card svg {
+    font-size: 2em;
+    color: #d9534f;
+  }
+  
+  .why-card h3 {
+    margin-top: 10px;
+  }
+  
+  /* 🔥 Meet Our Team */
+  .team-section {
+    padding: 60px 20px;
+    text-align: center;
+    background: white;
+  }
+  
+  .team-section h2 {
+    color: #d9534f;
+    font-size: 2em;
+  }
+  
+  .team-members {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+  }
+  
+  .team-card {
+    background: white;
+    text-align: center;
+    width: 250px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .team-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .team-card h3 {
+    color: #d9534f;
+  }
+  
+  /* 🔥 Testimonials Section */
+  .testimonials {
+    padding: 60px 20px;
+    background: #f8f9fa;
+    text-align: center;
+  }
+  
+  .testimonials h2 {
+    color: #d9534f;
+    font-size: 2em;
+  }
+  
+  /* ✅ Testimonial Cards */
+  .testimonial-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .testimonial-card {
+    background: white;
+    padding: 20px;
+    width: 320px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  .quote-icon {
+    font-size: 2em;
+    color: #d9534f;
+  }
+  
+  .testimonial-message {
+    font-size: 1.1em;
+    font-style: italic;
+    color: #333;
+    margin: 10px 0;
+  }
+  
+  .testimonial-author {
+    font-weight: bold;
+    color: #d9534f;
+  }
+  
+  /* ✅ Responsive Fixes */
+  @media (max-width: 768px) {
+    .mission-icons, .why-cards, .team-members, .testimonial-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .mission-card, .why-card, .team-card, .testimonial-card {
+      width: 100%;
+      max-width: 350px;
+    }
+  }
+  

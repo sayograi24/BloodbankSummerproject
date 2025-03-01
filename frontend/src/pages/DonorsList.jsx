@@ -1,67 +1,69 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import "../pages/DonorsList.css"; 
+import SearchDonors from "../components/SearchDonors";
 
-function DonorList() {
+const DonationList = () => {
+  const { bloodGroup } = useParams(); 
   const [donors, setDonors] = useState([]);
-  const [message, setMessage] = useState("");
-  const navigate = useNavigate();
-  const token = localStorage.getItem("token");
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    if (!token) {
-      navigate("/signin"); // Redirect if not logged in
-      return;
-    }
-
     const fetchDonors = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/donors", {
-          headers: { Authorization: `Bearer ${token}` }
+        const token = localStorage.getItem("token");
+        const response = await axios.get("http://localhost:5000/donors", {
+          headers: { Authorization: `Bearer ${token}` },
         });
-        setDonors(res.data.donors);
-      } catch (error) {
-        setMessage(error.response?.data?.error || "Failed to fetch donors");
+        
+        // Filter donors based on selected blood group
+        const filteredDonors = response.data.donors.filter(
+          (donor) => donor.bloodGroup === bloodGroup
+        );
+
+        setDonors(filteredDonors);
+      } catch (err) {
+        setError("Error fetching donors.");
+      } finally {
+        setLoading(false);
       }
     };
 
     fetchDonors();
-  }, [token, navigate]);
+  }, [bloodGroup]);
 
   return (
-    <div className="donor-container">
-      <h2>Registered Blood Donors</h2>
-
-      {message && <p>{message}</p>}
-
-      {donors.length > 0 ? (
-        <table border="1">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Address</th>
-              <th>Phone</th>
-              <th>Blood Group</th>
-              <th>Appointment Time</th>
-            </tr>
-          </thead>
-          <tbody>
-            {donors.map((donor, index) => (
-              <tr key={index}>
-                <td>{donor.name}</td>
-                <td>{donor.address}</td>
-                <td>{donor.phone}</td>
-                <td>{donor.bloodGroup}</td>
-                <td>{new Date(donor.appointmentTime).toLocaleString()}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+    <div className="donors-page">
+      <SearchDonors/>
+      <h2>Available Donors for Blood Group: {bloodGroup}</h2>
+      {loading ? (
+        <p>Loading donors...</p>
+      ) : error ? (
+        <p className="error-message">{error}</p>
+      ) : donors.length === 0 ? (
+        <p>No donors found for {bloodGroup}.</p>
       ) : (
-        <p>No donors have registered yet.</p>
+        <div className="donor-cards">
+          {donors.map((donor, index) => (
+            <div key={index} className="donor-card">
+              <div className="donor-header">
+                <h3 className="donor-name">{donor.name}</h3>
+                <span className="donor-blood-group">{donor.bloodGroup}</span>
+              </div>
+              <p><strong>Gender:</strong> {donor.gender}</p>
+              <p><strong>Age:</strong> {donor.age}</p>
+              <p><strong>Phone:</strong> {donor.phone}</p>
+              <p><strong>Location:</strong> {donor.address}</p>
+              <p><strong>Donation Date:</strong> {new Date(donor.donation_date).toLocaleDateString()}</p>
+              <a href={`tel:${donor.phone}`} className="call-button">Call</a>
+            </div>
+          ))}
+        </div>
       )}
     </div>
   );
-}
+};
 
-export default DonorList;
+export default DonationList;

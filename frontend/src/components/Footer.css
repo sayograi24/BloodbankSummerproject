@@ -1,0 +1,152 @@
+/* ✅ Footer Container */
+.footer {
+    width: 100%;
+    background-color: #d32f2f; /* Same Red as Navbar */
+    color: white;
+    padding: 50px 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* ✅ Footer Container */
+  .footer-container {
+    width: 90%;
+    max-width: 1300px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* ✅ Footer Top Section */
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* ✅ Footer Logo & Title */
+  .footer-about {
+    max-width: 300px;
+    text-align: left;
+  }
+  
+  .logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  
+  .footer-logo {
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  .footer-brand {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .footer-brand:hover {
+    transform: scale(1.05);
+  }
+  
+  /* ✅ Footer Links */
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-links h4,
+  .footer-contact h4,
+  .footer-social h4 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+  }
+  
+  .footer-links ul li {
+    margin-bottom: 8px;
+  }
+  
+  .footer-links ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  /* 🏆 Hover Effect for Links */
+  .footer-links ul li a:hover {
+    color: #ffe082;
+  }
+  
+  /* ✅ Footer Contact */
+  .footer-contact p {
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 5px;
+  }
+  
+  /* ✅ Social Media Icons */
+  .social-icons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .social-icons a {
+    color: white;
+    font-size: 1.5em;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    color: #ffe082;
+    transform: scale(1.1);
+  }
+  
+  /* ✅ Footer Bottom */
+  .footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 0.9em;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    width: 100%;
+  }
+  
+  /* ✅ Responsive Design */
+  @media (max-width: 900px) {
+    .footer-top {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .footer-about,
+    .footer-links,
+    .footer-contact,
+    .footer-social {
+      max-width: 100%;
+    }
+  
+    .social-icons {
+      justify-content: center;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .footer-links ul li a {
+      font-size: 1em;
+    }
+  
+    .footer-brand {
+      font-size: 1.3em;
+    }
+  }
+  

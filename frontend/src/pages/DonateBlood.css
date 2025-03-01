@@ -1,78 +1,169 @@
+/* 🔥 Page Layout */
+.donate-page {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 40px;
+  gap: 30px;
+}
+
+/* ✅ Left & Right Sidebars */
+.left-sidebar, .right-sidebar {
+  width: 22%;
+  background: #fde8e8;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.left-sidebar:hover, .right-sidebar:hover {
+  transform: translateY(-5px);
+}
+
+/* ✅ Sidebar Titles */
+.left-sidebar h3, .right-sidebar h3 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #c62828;
+  margin-bottom: 15px;
+}
+
+/* ✅ Sidebar Lists */
+.left-sidebar ul, .right-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.left-sidebar li, .right-sidebar li {
+  font-size: 16px;
+  color: #444;
+  margin: 8px 0;
+}
+
+/* ✅ Recent Donors List */
+.right-sidebar ul {
+  padding: 0;
+  text-align: left;
+}
+
+.right-sidebar li {
+  background: white;
+  padding: 12px;
+  border-radius: 8px;
+  margin: 6px 0;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.right-sidebar li:hover {
+  transform: scale(1.05);
+}
+
 /* ✅ Donation Form Container */
 .donate-container {
   width: 50%;
-  margin: auto;
-  padding: 40px;
-  background: #fff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+  background: white;
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
   text-align: center;
 }
 
+/* ✅ Form Title */
 .form-title {
-  font-size: 2em;
-  color: #d32f2f;
+  font-size: 26px;
+  font-weight: bold;
+  color: #c62828;
   margin-bottom: 20px;
 }
 
-/* ✅ Form Fields */
-.donate-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
+/* ✅ Input Fields (Fixed Width & Proper Spacing) */
 .donate-form input,
 .donate-form select {
+  width: calc(100% - 24px); /* Ensures padding doesn't push it out */
   padding: 12px;
-  font-size: 1em;
+  margin: 10px 0;
+  font-size: 16px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  width: 100%;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+  box-sizing: border-box;
 }
 
+/* ✅ Fix Dropdown Sizing */
 .donate-form select {
-  background-color: #fff;
+  appearance: none; /* Removes default dropdown styling */
+  padding-right: 30px; /* Ensures space for dropdown arrow */
+  min-width: auto; /* Ensures it doesn't expand too much */
+}
+
+/* ✅ Input Focus */
+.donate-form input:focus,
+.donate-form select:focus {
+  border-color: #c62828;
+}
+
+/* ✅ Gender Selection */
+.gender-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 12px 0;
+}
+
+.gender-container label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 /* ✅ Submit Button */
 .donate-button {
-  padding: 12px;
-  font-size: 1.1em;
-  font-weight: bold;
-  background-color: #d32f2f;
+  width: 100%;
+  padding: 14px;
+  background-color: #c62828;
   color: white;
+  font-size: 18px;
+  font-weight: bold;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
+  margin-top: 12px;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
 .donate-button:hover {
-  background-color: #a52828;
+  background-color: #b71c1c;
   transform: scale(1.05);
 }
 
-/* ✅ Message Styling */
+/* ✅ Success / Error Message */
 .form-message {
+  font-size: 16px;
+  font-weight: bold;
+  color: green;
   margin-top: 15px;
-  font-size: 1.1em;
-  color: #d32f2f;
 }
 
-/* ✅ Responsive Design */
-@media (max-width: 768px) {
+/* 🔥 Responsive Design */
+@media (max-width: 992px) {
+  .donate-page {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .left-sidebar, .right-sidebar {
+      width: 90%;
+      margin-bottom: 20px;
+  }
+
   .donate-container {
-    width: 90%;
-    padding: 30px;
-  }
-
-  .donate-form input,
-  .donate-form select {
-    font-size: 1em;
-  }
-
-  .donate-button {
-    font-size: 1em;
+      width: 90%;
   }
 }

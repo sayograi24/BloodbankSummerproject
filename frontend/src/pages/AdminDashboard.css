@@ -1,0 +1,195 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+  }
+  
+  /* Admin Dashboard */
+  .admin-dashboard {
+    display: flex;
+    height: 100vh;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    width: 250px;
+    background-color: #d9534f;
+    color: white;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    height: 100vh;
+    transition: width 0.3s ease;
+  }
+  
+  .sidebar.closed {
+    width: 60px;
+  }
+  
+  .sidebar .logo {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+  }
+  
+  .sidebar ul li {
+    padding: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    transition: background 0.3s ease;
+  }
+  
+  .sidebar ul li:hover {
+    background-color: #b72d2a;
+  }
+  
+  .sidebar ul li svg {
+    font-size: 18px;
+  }
+  
+  /* Sidebar Toggle Button */
+  .toggle-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 22px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
+  /* Content Area */
+  .content {
+    margin-left: 250px;
+    padding: 20px;
+    width: 100%;
+    transition: margin-left 0.3s ease;
+  }
+  
+  .sidebar.closed + .content {
+    margin-left: 60px;
+  }
+  
+  /* Forms */
+  form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+  }
+  
+  form input,
+  form select {
+    width: 48%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  form button {
+    width: 100%;
+    background-color: #d9534f;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  form button:hover {
+    background-color: #b72d2a;
+  }
+  
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  table th,
+  table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  table th {
+    background-color: #d9534f;
+    color: white;
+  }
+  
+  table tbody tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+  /* Action Buttons */
+  button {
+    cursor: pointer;
+    border: none;
+    padding: 8px;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  button.edit {
+    background-color: #f0ad4e;
+    color: white;
+  }
+  
+  button.edit:hover {
+    background-color: #ec971f;
+  }
+  
+  button.delete {
+    background-color: #d9534f;
+    color: white;
+  }
+  
+  button.delete:hover {
+    background-color: #b72d2a;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 200px;
+    }
+  
+    .sidebar.closed {
+      width: 50px;
+    }
+  
+    .sidebar.closed + .content {
+      margin-left: 50px;
+    }
+  
+    form input,
+    form select {
+      width: 100%;
+    }
+  }
+  

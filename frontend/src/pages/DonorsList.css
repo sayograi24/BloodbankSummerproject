@@ -1,0 +1,101 @@
+/* ✅ Donors Page */
+.donors-page {
+    padding: 50px;
+    text-align: center;
+    background-color: #f8f9fa;
+  }
+  
+  /* ✅ Donor Card Grid Layout */
+  .donor-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  /* ✅ Stylish Donor Card */
+  .donor-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 350px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 5px solid #d32f2f;
+  }
+  
+  .donor-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* ✅ Donor Card Header */
+  .donor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .donor-name {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #d32f2f;
+  }
+  
+  .donor-blood-group {
+    background: #d32f2f;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+  }
+  
+  /* ✅ Information Styling */
+  .donor-card p {
+    font-size: 1.1em;
+    color: #333;
+    margin: 5px 0;
+  }
+  
+  .donor-card p strong {
+    color: #d32f2f;
+  }
+  
+  /* ✅ Call Button */
+  .call-button {
+    display: block;
+    margin-top: 15px;
+    text-align: center;
+    background-color: #d32f2f;
+    color: white;
+    padding: 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  .call-button:hover {
+    background-color: #b71c1c;
+    transform: scale(1.05);
+  }
+  
+  /* ✅ Responsive Design */
+  @media (max-width: 768px) {
+    .donor-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .donor-card {
+      width: 90%;
+    }
+  }
+  

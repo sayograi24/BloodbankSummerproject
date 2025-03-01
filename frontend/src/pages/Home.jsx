@@ -5,37 +5,48 @@ import "../pages/Home.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import DonateBloodPopup from "../components/DonateBloodPopup";
-import { FaTint, FaHeartbeat, FaUsers } from "react-icons/fa";
+import SearchDonors from "../components/SearchDonors";
+import { FaTint, FaHeartbeat, FaUsers, FaPhoneAlt, FaQuoteLeft } from "react-icons/fa";
 
 // Import Images
 import image1 from "../assets/images/Freedom.png";
 import image2 from "../assets/images/blooddonation.jpg";
 import image3 from "../assets/images/blood-donation-nepal-programme-kathmandu-2-edited.jpg";
 import image4 from "../assets/images/4thimage.jpg";
+import logo from "../assets/images/logo.jpg";
+
 
 function Home() {
   const sliderRef = useRef(null);
   const [donors, setDonors] = useState([]);
+  const [testimonials, setTestimonials] = useState([]);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
-  // Fetch Donors from Flask API
+  // Fetch Donors & Testimonials from Flask API
   useEffect(() => {
-    const fetchDonors = async () => {
+    const fetchData = async () => {
       try {
-        const token = localStorage.getItem("token"); // Get token from local storage
-        const response = await axios.get("http://localhost:5000/donors", {
-          headers: { Authorization: `Bearer ${token}` },
-        });
-        setDonors(response.data.donors);
+        const token = localStorage.getItem("token");
+
+        const [donorsRes, testimonialsRes] = await Promise.all([
+          axios.get("http://localhost:5000/donors", {
+            headers: { Authorization: `Bearer ${token}` },
+          }),
+          axios.get("http://localhost:5000/testimonials", {
+            headers: { Authorization: `Bearer ${token}` },
+          }),
+        ]);
+
+        setDonors(donorsRes.data.donors);
+        setTestimonials(testimonialsRes.data.testimonials);
       } catch (error) {
-        console.error("Error fetching donors:", error);
+        console.error("Error fetching data:", error);
       }
     };
 
-    fetchDonors();
+    fetchData();
   }, []);
 
-  // Slider Settings
   const settings = {
     dots: true,
     infinite: true,
@@ -43,30 +54,53 @@ function Home() {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 5000,
     arrows: false,
   };
 
+  const slides = [
+    {
+      image: image1,
+      title: "Save a Life, Donate Blood",
+      description: "Join us in our mission to save lives by donating blood. Every drop counts.",
+    },
+    {
+      image: image2,
+      title: "Operation Update: Karnali Earthquake",
+      description: "A 6.4 magnitude earthquake struck Jajarkot District on 3 November 2023 at 11:47 local time. The epicenter was located in...",
+    },
+    {
+      image: image3,
+      title: "People Co-operating",
+      description: "All the people around are co-operating with the staff for donating blood for the needed people.",
+    },
+    {
+      image: image4,
+      title: "Healthy Way to Live",
+      description: "Donating blood can be a useful way to live, and letting others live.",
+    }
+  ];
+
   return (
     <div className="home">
-      {/* ✅ Slider Section */}
+
+      {/* 🔥 RESTORED SLIDER - ORIGINAL DESIGN */}
       <section className="intro">
         <div className="slider-container">
-          {/* Left Arrow */}
           <button className="slider-nav prev-button" onClick={() => sliderRef.current.slickPrev()}>
             &#8249;
           </button>
 
           <Slider ref={sliderRef} {...settings}>
-            {[image1, image2, image3, image4].map((src, index) => (
+            {slides.map((slide, index) => (
               <div key={index} className="intro-content">
                 <div className="intro-image-text">
                   <div className="intro-image">
-                    <img src={src} alt={`Slide ${index + 1}`} />
+                    <img src={slide.image} alt={`Slide ${index + 1}`} loading="lazy" />
                   </div>
                   <div className="intro-text">
-                    <h2>Save a Life, Donate Blood</h2>
-                    <p>Join us in our mission to save lives by donating blood. Every drop counts.</p>
+                    <h2>{slide.title}</h2>
+                    <p>{slide.description}</p>
                     <button onClick={() => setIsPopupOpen(true)} className="cta-button">
                       Donate Now
                     </button>
@@ -76,18 +110,15 @@ function Home() {
             ))}
           </Slider>
 
-          {/* Right Arrow */}
           <button className="slider-nav next-button" onClick={() => sliderRef.current.slickNext()}>
             &#8250;
           </button>
         </div>
       </section>
 
-      {/* ✅ Updated Why Donate Blood Section */}
       <section className="why-donate">
         <div className="container">
-          <p className="section-subtitle">The Importance of Blood Donation</p>
-          <h2 className="section-title">Why Donate Blood?</h2><br></br>
+          <h2 className="section-title">Why Donate Blood?</h2>
           <div className="benefits">
             <div className="benefit-card">
               <div className="benefit-icon-circle">
@@ -114,61 +145,90 @@ function Home() {
         </div>
       </section>
 
-
-      {/* ✅ How to Donate Blood Section */}
-      <section className="how-to-donate">
-        <div className="container">
-          <h2 className="section-title">How to Donate Blood?</h2><br></br>
-          <div className="steps">
-            <div className="step-card">
-              <div className="step-number">1</div>
-              <h3>Register Online</h3>
-              <p>Sign up and fill in your details.</p>
-            </div>
-            <div className="step-card">
-              <div className="step-number">2</div>
-              <h3>Book an Appointment</h3>
-              <p>Schedule your donation at a nearby center.</p>
-            </div>
-            <div className="step-card">
-              <div className="step-number">3</div>
-              <h3>Donate Safely</h3>
-              <p>Visit the center and donate blood under expert supervision.</p>
-            </div>
-            <div className="step-card">
-              <div className="step-number">4</div>
-              <h3>Save Lives</h3>
-              <p>Your donation helps those in need.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ✅ Updated Recent Donors Section */}
-      <section className="donors-list">
-        <div className="container">
-          <h2 className="section-title">Recent Donors</h2>
-          <div className="donor-cards">
-            {donors.length > 0 ? (
-              donors.map((donor, index) => (
-                <div key={index} className="donor-card">
-                  <img src="/assets/images/logo.jpg" alt="Donor" className="donor-image" />
-                  <h3>{donor.name}</h3>
-                  <p><strong>Blood Group:</strong> {donor.bloodGroup}</p>
-                  <p><strong>Mobile No.:</strong> {donor.phone}</p>
-                  <p><strong>Gender:</strong> {donor.gender}</p>
-                  <p><strong>Age:</strong> {donor.age}</p>
-                  <p><strong>Address:</strong> {donor.address}</p>
-                  <p><strong>Donation Date:</strong> {new Date(donor.donation_date).toLocaleDateString()}</p>
+          
+      {/* 🔥 NEW DESIGN: How to Donate Blood */}
+        <section className="how-to-donate">
+          <div className="container">
+            <h2 className="section-title">How to Donate Blood?</h2>
+            <div className="steps">
+              {[
+                { step: 1, title: "Register Online", desc: "Sign up and fill in your details." },
+                { step: 2, title: "Book an Appointment", desc: "Schedule your donation at a nearby center." },
+                { step: 3, title: "Donate Safely", desc: "Visit the center and donate blood under expert supervision." },
+                { step: 4, title: "Save Lives", desc: "Your donation helps those in need." },
+              ].map((item) => (
+                <div key={item.step} className="step-card">
+                  <div className="step-icon">
+                    <span>{item.step}</span>
+                  </div>
+                  <h3>{item.title}</h3>
+                  <p>{item.desc}</p>
                 </div>
-              ))
-            ) : (
-              <p>No donors found.</p>
-            )}
+              ))}
+            </div>
           </div>
+        </section>
+
+        <SearchDonors/>
+
+        <section className="donors-list">
+          <div className="container">
+            <h2 className="section-title">Recent Donors</h2>
+            <div className="donor-cards">
+              {donors.slice(0, 3).map((donor, index) => ( // Show only 3 donors
+                <div key={index} className="donor-card">
+                  <div className="blood-group-circle">{donor.bloodGroup}</div>
+                  <img src={logo} alt="Donor Logo" className="donor-logo" /> {/* Added Logo */}
+                  <h3 className="donor-name">{donor.name}</h3>
+                  <div className="donor-info">
+                    <p><strong>Mobile No.:</strong> {donor.phone}</p>
+                    <p><strong>Gender:</strong> {donor.gender}</p>
+                    <p><strong>Age:</strong> {donor.age}</p>
+                    <p><strong>Address:</strong> {donor.address}</p>
+                    <p><strong>Donation Date:</strong> {new Date(donor.donation_date).toLocaleDateString()}</p>
+                  </div>
+                  <a href={`tel:${donor.phone}`} className="call-button">
+                    <FaPhoneAlt className="call-icon" /> Call Donor
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+     {/* 🔥 TESTIMONIALS SLIDER */}
+     <section className="testimonials">
+        <div className="container">
+          <h2 className="section-title">What Our Donors Say</h2>
+          {testimonials.length > 0 ? (
+            <Slider {...{
+              dots: true,
+              infinite: true,
+              speed: 500,
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              autoplay: true,
+              autoplaySpeed: 5000,
+              arrows: false
+            }}>
+              {testimonials.map((testimonial, index) => (
+                <div key={index} className="testimonial-card">
+                  <FaQuoteLeft className="quote-icon" />
+                  <p className="testimonial-message">"{testimonial.message}"</p>
+                  {/*<img
+                    src={testimonial.image || "https://via.placeholder.com/80"}
+                    alt="User"
+                    className="testimonial-image"
+                  />*/}
+                  <p className="testimonial-author">- {testimonial.name}</p>
+                </div>
+              ))}
+            </Slider>
+          ) : (
+            <p>No testimonials available.</p>
+          )}
         </div>
       </section>
-
 
       {isPopupOpen && <DonateBloodPopup onClose={() => setIsPopupOpen(false)} />}
     </div>
