@@ -68,7 +68,7 @@
 
 /* ===== Switch Between Sign In & Sign Up ===== */
 .toggle-btn {
-  background: none;
+  background: #000000;
   border: none;
   color: #e53935;
   font-weight: bold;

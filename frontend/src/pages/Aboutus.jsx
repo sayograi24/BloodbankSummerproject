@@ -57,12 +57,12 @@ function AboutUs() {
         <div className="team-members">
           <div className="team-card">
             <img src={logo} alt="Founder" />
-            <h3>John Doe</h3>
+            <h3>Sayog Rai</h3>
             <p>Founder & CEO</p>
           </div>
           <div className="team-card">
             <img src={logo} alt="Doctor" />
-            <h3>Dr. Emily Smith</h3>
+            <h3>Dr. Rijal Munankarmi</h3>
             <p>Medical Director</p>
           </div>
         </div>

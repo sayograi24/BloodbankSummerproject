@@ -11,6 +11,7 @@
     FaQuoteLeft,
     } from "react-icons/fa";
     import "./AdminDashboard.css";
+    import logo from "../assets/images/logo.jpg"
 
     function AdminDashboard() {
     const navigate = useNavigate();
@@ -76,7 +77,6 @@
         }
     };
 
-    
 
         // ✅ Fetch Testimonials
         const fetchTestimonials = async () => {
@@ -246,6 +246,7 @@
     return (
         <div className="admin-dashboard">
         <div className={`sidebar ${sidebarOpen ? "open" : "closed"}`}>
+        <img src={logo} alt="Logo" className="footer-logo" />
             <div className="logo">Blood Bank Admin</div>
             <button className="toggle-btn" onClick={() => setSidebarOpen(!sidebarOpen)}>
             <FaBars />

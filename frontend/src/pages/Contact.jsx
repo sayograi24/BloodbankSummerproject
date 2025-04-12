@@ -129,7 +129,7 @@ function Contact() {
       </div>
 
       {/* 🔥 WhatsApp Chat Button */}
-      <a href="https://wa.me/123456789" className="whatsapp-button" target="_blank" rel="noopener noreferrer">
+      <a href="https://wa.me/(+977)980-3119678" className="whatsapp-button" target="_blank" rel="noopener noreferrer">
         <FaWhatsapp className="whatsapp-icon" /> Chat with Us
       </a>
     </div>

@@ -34,7 +34,7 @@ const Footer = () => {
             <h4>Contact Us</h4>
             <p><FaPhoneAlt /> +123 456 7890</p>
             <p><FaEnvelope /> info@blooddonation.com</p>
-            <p><FaMapMarkerAlt /> 123 Donation St, City, Country</p>
+            <p><FaMapMarkerAlt /> Kantipur college of mangaement and information technology</p>
           </div>
 
           {/* 🔸 Social Media */}
