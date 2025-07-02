@@ -1,11 +1,11 @@
-/* ✅ Search Container */
+/*  Search Container */
 .search-container {
     text-align: center;
     padding: 40px;
     background-color: #f8f9fa;
   }
   
-  /* ✅ Search Box (Dropdown + Button) */
+  /*  Search Box (Dropdown + Button) */
   .search-box {
     display: flex;
     justify-content: center;
@@ -14,7 +14,7 @@
     flex-wrap: wrap;
   }
   
-  /* ✅ Dropdown Styling */
+  /* Dropdown Styling */
   .dropdown {
     padding: 10px;
     font-size: 1.1em;
@@ -31,7 +31,7 @@
     outline: none;
   }
   
-  /* ✅ Search Button */
+  /*  Search Button */
   .cta-button {
     padding: 10px 20px;
     font-size: 1.1em;
@@ -48,7 +48,7 @@
     transform: scale(1.05);
   }
   
-  /* ✅ Responsive Design */
+  /*  Responsive Design */
   @media (max-width: 768px) {
     .search-box {
       flex-direction: column;
