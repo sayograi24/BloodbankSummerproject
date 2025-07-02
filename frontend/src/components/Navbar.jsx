@@ -7,7 +7,7 @@ function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem("token"));
   const navigate = useNavigate();
 
-  // ✅ Update navbar when auth state changes
+  //  Update navbar when auth state changes
   useEffect(() => {
     const updateAuthState = () => {
       setIsLoggedIn(!!localStorage.getItem("token"));
@@ -19,13 +19,13 @@ function Navbar() {
     };
   }, []);
 
-  // ✅ Handle Sign Out
+  //  Handle Sign Out
   const handleSignOut = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
     setIsLoggedIn(false);
     navigate("/");
-    window.dispatchEvent(new Event("storage")); // ✅ Force navbar update
+    window.dispatchEvent(new Event("storage")); 
   };
 
   return (
@@ -45,7 +45,7 @@ function Navbar() {
           <li><Link to="/donate-blood" className="nav-item">Donate Blood</Link></li>
         </ul>
 
-        {/* ✅ Dynamic Sign In/Out Button */}
+        {/*  Dynamic Sign In/Out Button */}
         <div className="auth-btn">
           {isLoggedIn ? (
             <button onClick={handleSignOut} className="signout-btn">Sign Out</button>
