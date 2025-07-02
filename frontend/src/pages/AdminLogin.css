@@ -1,4 +1,4 @@
-/* 🔥 Full-Screen Background */
+/*  Full-Screen Background */
 .admin-login-container {
     display: flex;
     justify-content: center;
@@ -7,7 +7,7 @@
     background: url("../assets/images/admin-bg.jpg") no-repeat center center/cover;
   }
   
-  /* 🔥 Login Box */
+  /*  Login Box */
   .admin-login-box {
     background: rgba(255, 255, 255, 0.95);
     padding: 40px;
@@ -17,20 +17,20 @@
     width: 350px;
   }
   
-  /* 🔥 Title */
+  /*  Title */
   .admin-login-box h2 {
     margin-bottom: 20px;
     color: #d9534f;
   }
   
-  /* 🔥 Input Container */
+  /*  Input Container */
   .input-container {
     position: relative;
     width: 100%;
     margin-bottom: 20px;
   }
   
-  /* 🔥 Input Fields */
+  /*  Input Fields */
   .input-container input {
     width: 93%;
     padding: 12px;
@@ -56,7 +56,7 @@
     padding: 0 5px;
   }
   
-  /* 🔥 When input is active (focused) or has text */
+  /*  When input is active (focused) or has text */
   .input-container input:focus + label,
   .input-container input:not(:placeholder-shown) + label {
     top: -5px; /* Move label above */
@@ -85,7 +85,7 @@
     background-color: #b52b27;
   }
   
-  /* 🔥 Error Message */
+  /*  Error Message */
   .error-message {
     color: red;
     font-size: 14px;
