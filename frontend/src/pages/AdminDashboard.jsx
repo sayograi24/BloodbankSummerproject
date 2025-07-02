@@ -51,7 +51,7 @@
 
     }, []);
 
-    // ✅ Fetch Donors and Users
+    //  Fetch Donors and Users
     const fetchData = async () => {
         try {
         const token = localStorage.getItem("adminToken");
@@ -69,7 +69,7 @@
             }),
         ]);
 
-        // ✅ Fix: Ensure donors data is correctly set
+        //  Fix: Ensure donors data is correctly set
         setDonors(donorsRes.data?.donors || []);
         setUsers(usersRes.data?.users || []);
         } catch (error) {
@@ -78,7 +78,7 @@
     };
 
 
-        // ✅ Fetch Testimonials
+        //  Fetch Testimonials
         const fetchTestimonials = async () => {
             try {
                 const res = await axios.get("http://localhost:5000/testimonials");
@@ -88,12 +88,12 @@
             }
         };
     
-        // ✅ Handle Testimonial Input Change
+        //  Handle Testimonial Input Change
         const handleTestimonialChange = (e) => {
             setTestimonialData({ ...testimonialData, [e.target.name]: e.target.value });
         };
     
-        // ✅ Add Testimonial
+        //  Add Testimonial
         const handleAddTestimonial = async (e) => {
             e.preventDefault();
             try {
@@ -109,7 +109,7 @@
             }
         };
     
-        // ✅ Delete Testimonial
+        //  Delete Testimonial
         const handleDeleteTestimonial = async (name) => {
             try {
                 const token = localStorage.getItem("adminToken");
@@ -124,13 +124,13 @@
         };
     
 
-    // ✅ Handle Donor Input Changes
+    //  Handle Donor Input Changes
     const handleChange = (e) => {
         setDonorData({ ...donorData, [e.target.name]: e.target.value });
     };
 
     const handleEditUser = (user) => {
-        console.log("Editing user:", user); // ✅ Debugging: Check if user data is correct
+        console.log("Editing user:", user); // Debugging: Check if user data is correct
     
         if (!user || !user.name || !user.email) {
             console.error("Invalid user data:", user);
@@ -138,11 +138,11 @@
         }
     
         setUserData({
-            name: user.name || "",  // ✅ Prevent undefined values
-            email: user.email || "" // ✅ Prevent undefined values
+            name: user.name || "",  //  Prevent undefined values
+            email: user.email || "" //  Prevent undefined values
         });
     
-        setEditingUser(user);  // ✅ Now, the form should show correctly
+        setEditingUser(user);  //  Now, the form should show correctly
     };
     
     const handleUserChange = (e) => {
@@ -154,7 +154,7 @@
     
 
 
-    // ✅ Update User (Fix Applied)
+    //  Update User (Fix Applied)
     const handleUpdateUser = async (e) => {
         e.preventDefault();
         if (!editingUser) return;
@@ -175,7 +175,7 @@
         }
     };
 
-    // ✅ Delete User (Fix Applied)
+    //  Delete User (Fix Applied)
     const handleDeleteUser = async (email) => {
         if (!email) return;
 
@@ -192,7 +192,7 @@
         }
     };
 
-    // ✅ Add or Update Donor
+    //  Add or Update Donor
     const handleSubmitDonor = async (e) => {
         e.preventDefault();
         try {
@@ -218,13 +218,13 @@
         }
     };
 
-    // ✅ Edit Donor
+    //  Edit Donor
     const handleEditDonor = (donor) => {
         setDonorData({ ...donor });
         setEditingDonor(donor);
     };
 
-    // ✅ Delete Donor
+    //  Delete Donor
     const handleDeleteDonor = async (email) => {
         try {
         const token = localStorage.getItem("adminToken");
@@ -237,7 +237,7 @@
         }
     };
 
-    // ✅ Logout
+    //  Logout
     const handleLogout = () => {
         localStorage.removeItem("adminToken");
         navigate("/admin/login");
@@ -316,7 +316,7 @@
 
             {selectedTab === "users" && (
             <>
-                {/* ✅ Ensure the form displays only when editingUser is set */}
+                {/*  Ensure the form displays only when editingUser is set */}
                 {editingUser && userData.name !== undefined && (
                     <form onSubmit={handleUpdateUser} className="edit-form">
                         <h3>Edit User</h3>
@@ -362,7 +362,7 @@
             </>
             )}
 
-             {/* ✅ Testimonials Management */}
+             {/*  Testimonials Management */}
              {selectedTab === "testimonials" && (
                     <>
                         <h2>Manage Testimonials</h2>
@@ -386,7 +386,7 @@
                             <button type="submit">Add Testimonial</button>
                         </form>
 
-                        {/* ✅ Testimonials Table */}
+                        {/*  Testimonials Table */}
                         <table>
                             <thead>
                                 <tr><th>Name</th><th>Message</th><th>Actions</th></tr>
