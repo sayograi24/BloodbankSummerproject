@@ -10,7 +10,7 @@ app = Flask(__name__)
 CORS(app)
 app.config["SECRET_KEY"] = "your_secret_key"
 
-# ✅ Database Connection
+#  Database Connection
 client = MongoClient("mongodb://localhost:27017/")
 db = client.blood_bank
 users_collection = db.users
@@ -18,7 +18,7 @@ admins_collection = db.admins
 donors_collection = db.donors
 testimonials_collection = db.testimonials
 
-# ✅ Middleware for Token Authentication (User/Admin)
+#  Middleware for Token Authentication (User/Admin)
 def token_required(f):
     @wraps(f)
     def wrapper(*args, **kwargs):
@@ -40,7 +40,7 @@ def token_required(f):
     
     return wrapper
 
-# ✅ User Signup
+#  User Signup
 @app.route("/signup", methods=["POST"])
 def signup():
     data = request.json
@@ -56,7 +56,7 @@ def signup():
 
     return jsonify({"message": "User registered successfully"}), 201
 
-# ✅ User Signin
+#  User Signin
 @app.route("/signin", methods=["POST"])
 def signin():
     data = request.json
@@ -73,7 +73,7 @@ def signin():
 
     return jsonify({"token": token, "user": {"name": user["name"], "email": user["email"]}})
 
-# ✅ Admin Signin (Fixed)
+#  Admin Signin (Fixed)
 @app.route("/admin/signin", methods=["POST"])
 def admin_signin():
     data = request.json
@@ -91,7 +91,7 @@ def admin_signin():
 
     return jsonify({"token": token, "admin": {"email": admin["email"]}})
 
-# ✅ Admin Controls: Add Donor
+#  Admin Controls: Add Donor
 @app.route("/admin/donors/add", methods=["POST"])
 @token_required
 def add_donor():
@@ -122,7 +122,7 @@ def add_donor():
     return jsonify({"message": "Donor added successfully"}), 201
 
 
-# ✅ Blood Donation (Protected)
+#  Blood Donation (Protected)
 @app.route("/donate", methods=["POST"])
 @token_required
 def donate_blood():
@@ -145,19 +145,19 @@ def donate_blood():
     donors_collection.insert_one(donation_entry)
     return jsonify({"message": "Donation recorded successfully"}), 200
 
-# ✅ Fetch Recent Donors
+#  Fetch Recent Donors
 @app.route("/donors", methods=["GET"])
 def get_all_donors():
     donors = list(donors_collection.find({}, {"_id": 0}))
     return jsonify({"donors": donors[::-1]}), 200  # Show newest first
 
-# ✅ Fetch Testimonials
+#  Fetch Testimonials
 @app.route("/testimonials", methods=["GET"])
 def get_testimonials():
     testimonials = list(testimonials_collection.find({}, {"_id": 0}))
     return jsonify({"testimonials": testimonials}), 200
 
-# ✅ Admin Controls: Fetch All Users (Admin Only)
+#  Admin Controls: Fetch All Users (Admin Only)
 @app.route("/admin/users", methods=["GET"])
 @token_required
 def get_users():
@@ -207,7 +207,7 @@ def update_user(email):
     return jsonify({"message": "User updated successfully"}), 200
 
 
-# ✅ Admin Controls: Delete User (Admin Only)
+#  Admin Controls: Delete User (Admin Only)
 @app.route("/admin/users/delete/<email>", methods=["DELETE"])
 @token_required
 def delete_user(email):
@@ -217,7 +217,7 @@ def delete_user(email):
     users_collection.delete_one({"email": email})
     return jsonify({"message": "User deleted successfully"}), 200
 
-# ✅ Admin Controls: Delete Testimonial
+#  Admin Controls: Delete Testimonial
 @app.route("/admin/testimonials/delete/<string:name>", methods=["DELETE"])
 @token_required
 def delete_testimonial(name):
@@ -227,7 +227,7 @@ def delete_testimonial(name):
     testimonials_collection.delete_one({"name": name})
     return jsonify({"message": "Testimonial deleted successfully"}), 200
 
-# ✅ Admin Controls: Delete Donor
+#  Admin Controls: Delete Donor
 @app.route("/admin/donors/delete/<email>", methods=["DELETE"])
 @token_required
 def delete_donor(email):
