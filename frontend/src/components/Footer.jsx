@@ -7,9 +7,9 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
-        {/* 🔹 Footer Top Section */}
+        {/*  Footer Top Section */}
         <div className="footer-top">
-          {/* 🔸 Logo & Mission */}
+          {/*  Logo & Mission */}
           <div className="footer-about">
             <a href="/" className="logo-link">
               <img src={logo} alt="Logo" className="footer-logo" />
@@ -18,7 +18,7 @@ const Footer = () => {
             <p>We are dedicated to saving lives by connecting donors with those in need. Every drop counts!</p>
           </div>
 
-          {/* 🔸 Quick Links */}
+          {/*  Quick Links */}
           <div className="footer-links">
             <h4>Quick Links</h4>
             <ul>
@@ -29,7 +29,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* 🔸 Contact Info */}
+          {/*  Contact Info */}
           <div className="footer-contact">
             <h4>Contact Us</h4>
             <p><FaPhoneAlt /> +123 456 7890</p>
@@ -37,7 +37,7 @@ const Footer = () => {
             <p><FaMapMarkerAlt /> Kantipur college of mangaement and information technology</p>
           </div>
 
-          {/* 🔸 Social Media */}
+          {/*  Social Media */}
           <div className="footer-social">
             <h4>Follow Us</h4>
             <div className="social-icons">
