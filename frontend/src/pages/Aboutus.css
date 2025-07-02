@@ -1,11 +1,11 @@
-/* 🔥 Global Styles */
+/*  Global Styles */
 .about-us {
     font-family: 'Arial', sans-serif;
     background-color: #f8f9fa;
     color: #333;
   }
   
-  /* 🔥 Hero Section */
+  /*  Hero Section */
   .hero-section {
     background: url("../assets/images/blooddonation.jpg") center/cover no-repeat;
     height: 300px;
@@ -43,7 +43,7 @@
     margin-top: 10px;
   }
   
-  /* 🔥 Mission Section */
+  /*  Mission Section */
   .mission-section {
     padding: 60px 20px;
     text-align: center;
@@ -80,7 +80,7 @@
     font-size: 2em;
   }
   
-  /* 🔥 Why Choose Us */
+  /*  Why Choose Us */
   .why-choose {
     padding: 60px 20px;
     text-align: center;
@@ -123,7 +123,7 @@
     margin-top: 10px;
   }
   
-  /* 🔥 Meet Our Team */
+  /*  Meet Our Team */
   .team-section {
     padding: 60px 20px;
     text-align: center;
@@ -163,7 +163,7 @@
     color: #d9534f;
   }
   
-  /* 🔥 Testimonials Section */
+  /* Testimonials Section */
   .testimonials {
     padding: 60px 20px;
     background: #f8f9fa;
@@ -175,7 +175,7 @@
     font-size: 2em;
   }
   
-  /* ✅ Testimonial Cards */
+  /* Testimonial Cards */
   .testimonial-container {
     display: flex;
     flex-wrap: wrap;
@@ -210,7 +210,7 @@
     color: #d9534f;
   }
   
-  /* ✅ Responsive Fixes */
+  /*  Responsive Fixes */
   @media (max-width: 768px) {
     .mission-icons, .why-cards, .team-members, .testimonial-container {
       flex-direction: column;
