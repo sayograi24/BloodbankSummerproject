@@ -1,4 +1,4 @@
-/* ===== Popup Background Overlay ===== */
+/* Popup Background Overlay  */
 .popup-overlay {
   position: fixed;
   top: 0;
@@ -11,7 +11,7 @@
   justify-content: center;
 }
 
-/* ===== Popup Box (White Container) ===== */
+/*  Popup Box (White Container)  */
 .popup-modal {
   background: white;
   padding: 25px;
@@ -22,7 +22,7 @@
   position: relative; /* Ensure close button stays inside */
 }
 
-/* ===== Input Fields (Fix width & spacing) ===== */
+/*  Input Fields (Fix width & spacing)  */
 .popup-modal input {
   width: 95%; /* Ensure fields are not too big */
   padding: 10px;
@@ -32,7 +32,7 @@
   border-radius: 5px;
 }
 
-/* ===== Buttons Styling ===== */
+/*  Buttons Styling  */
 .action-btn {
   width: 100%;
   padding: 12px;
@@ -50,7 +50,7 @@
   background: #c62828;
 }
 
-/* ===== Close Button (Inside Popup) ===== */
+/*  Close Button (Inside Popup)  */
 .close-btn {
   position: absolute;
   top: 10px;
@@ -79,7 +79,7 @@
   text-decoration: underline;
 }
 
-/* ===== Responsive Popup ===== */
+/*  Responsive Popup  */
 @media (max-width: 400px) {
   .popup-modal {
     width: 90%;
