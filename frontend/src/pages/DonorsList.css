@@ -1,11 +1,11 @@
-/* ✅ Donors Page */
+/*  Donors Page */
 .donors-page {
     padding: 50px;
     text-align: center;
     background-color: #f8f9fa;
   }
   
-  /* ✅ Donor Card Grid Layout */
+  /*  Donor Card Grid Layout */
   .donor-cards {
     display: flex;
     flex-wrap: wrap;
@@ -14,7 +14,7 @@
     margin-top: 20px;
   }
   
-  /* ✅ Stylish Donor Card */
+  /*  Stylish Donor Card */
   .donor-card {
     background: white;
     padding: 20px;
@@ -31,7 +31,7 @@
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
   }
   
-  /* ✅ Donor Card Header */
+  /*  Donor Card Header */
   .donor-header {
     display: flex;
     justify-content: space-between;
@@ -56,7 +56,7 @@
     font-weight: bold;
   }
   
-  /* ✅ Information Styling */
+  /*  Information Styling */
   .donor-card p {
     font-size: 1.1em;
     color: #333;
@@ -67,7 +67,7 @@
     color: #d32f2f;
   }
   
-  /* ✅ Call Button */
+  /*  Call Button */
   .call-button {
     display: block;
     margin-top: 15px;
@@ -87,7 +87,7 @@
     transform: scale(1.05);
   }
   
-  /* ✅ Responsive Design */
+  /*  Responsive Design */
   @media (max-width: 768px) {
     .donor-cards {
       flex-direction: column;
