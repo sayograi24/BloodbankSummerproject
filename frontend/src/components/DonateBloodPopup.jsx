@@ -10,7 +10,7 @@ function DonateBloodPopup({ onClose }) {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  // ✅ Check if user is already logged in
+  //  Check if user is already logged in
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
@@ -18,12 +18,12 @@ function DonateBloodPopup({ onClose }) {
     }
   }, [navigate]);
 
-  // ✅ Handle input changes
+  //  Handle input changes
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // ✅ Handle form submission (Signup or Signin)
+  // Handle form submission (Signup or Signin)
   const handleSubmit = async (e) => {
     e.preventDefault();
     setMessage(""); // Clear previous messages
@@ -39,18 +39,18 @@ function DonateBloodPopup({ onClose }) {
       });
 
       if (isSignup) {
-        // ✅ Redirect to Sign In Page after successful signup
+        //  Redirect to Sign In Page after successful signup
         setIsSignup(false);
         setMessage("Signup successful! Please sign in.");
       } else {
-        // ✅ Store token and user data in localStorage
+        // Store token and user data in localStorage
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("user", JSON.stringify(res.data.user));
 
-        // ✅ Notify Navbar to update
+        //  Notify Navbar to update
         window.dispatchEvent(new Event("storage"));
 
-        // ✅ Redirect to donate blood page
+        //  Redirect to donate blood page
         navigate("/donate-blood");
       }
     } catch (error) {
@@ -68,7 +68,7 @@ function DonateBloodPopup({ onClose }) {
 
         {message && <p className="error">{message}</p>}
 
-        {/* ✅ Sign In / Sign Up Form */}
+        {/*  Sign In / Sign Up Form */}
         <form onSubmit={handleSubmit}>
           {isSignup && (
             <input
@@ -102,7 +102,7 @@ function DonateBloodPopup({ onClose }) {
           </button>
         </form>
 
-        {/* ✅ Toggle between Sign In / Sign Up */}
+        {/*  Toggle between Sign In / Sign Up */}
         <p>
           {isSignup ? "Already have an account?" : "Don't have an account?"}{" "}
           <button onClick={() => setIsSignup(!isSignup)} className="toggle-btn">
@@ -110,7 +110,7 @@ function DonateBloodPopup({ onClose }) {
           </button>
         </p>
 
-        {/* ✅ Close Button */}
+        {/*  Close Button */}
         <button onClick={onClose} className="close-btn">✖</button>
       </div>
     </div>
