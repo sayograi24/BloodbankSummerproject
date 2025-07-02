@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "./Signin.css";  // ✅ Link CSS
+import "./Signin.css";  
 
 function Signin() {
   const [user, setUser] = useState({ email: "", password: "" });
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
 
-  // ✅ Check if user is already logged in
+  //  Check if user is already logged in
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
