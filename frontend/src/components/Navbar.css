@@ -1,4 +1,4 @@
-/* ✅ Full-Width Fixed Navbar */
+/*  Full-Width Fixed Navbar */
 .navbar {
   width: 100%;
   height: 75px;
@@ -14,7 +14,7 @@
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* ✅ Navbar Container */
+/*  Navbar Container */
 .navbar-container {
   width: 90%;
   max-width: 1300px;
@@ -24,14 +24,14 @@
   padding: 0 20px;
 }
 
-/* ✅ Remove the white gap below navbar */
+/*  Remove the white gap below navbar */
 body {
   margin: 0;
   padding: 0;
   padding-top: 75px; /* Prevent content from going under the navbar */
 }
 
-/* ✅ Logo & Title */
+/*  Logo & Title */
 .logo-title {
   display: flex;
   align-items: center;
@@ -55,7 +55,7 @@ body {
   transition: transform 0.3s ease-in-out;
 }
 
-/* ✅ Navigation Links */
+/* Navigation Links */
 .nav-links {
   display: flex;
   list-style: none;
@@ -79,7 +79,7 @@ body {
   color: #ffe082;
 }
 
-/* 🏆 Smooth Underline Hover Effect */
+/*  Smooth Underline Hover Effect */
 .nav-item::after {
   content: "";
   width: 0;
@@ -95,13 +95,13 @@ body {
   width: 100%;
 }
 
-/* ✅ Authentication Button Container */
+/*  Authentication Button Container */
 .auth-btn {
   display: flex;
   align-items: center;
 }
 
-/* ✅ Sign In Button Styling */
+/*  Sign In Button Styling */
 .signin-btn {
   display: inline-block;
   color: #d32f2f;
@@ -120,7 +120,7 @@ body {
   transform: scale(1.1);
 }
 
-/* ✅ Sign Out Button */
+/*  Sign Out Button */
 .signout-btn {
   background-color: white;
   color: #d32f2f;
@@ -139,7 +139,7 @@ body {
   transform: scale(1.1);
 }
 
-/* ✅ Mobile Responsive Fix */
+/*  Mobile Responsive Fix */
 @media (max-width: 900px) {
   .navbar-container {
     flex-direction: column;
