@@ -1,4 +1,4 @@
-/* ✅ Footer Container */
+/* Footer Container */
 .footer {
     width: 100%;
     background-color: #d32f2f; /* Same Red as Navbar */
@@ -7,7 +7,7 @@
     font-family: Arial, sans-serif;
   }
   
-  /* ✅ Footer Container */
+  /* Footer Container */
   .footer-container {
     width: 90%;
     max-width: 1300px;
@@ -17,7 +17,7 @@
     align-items: center;
   }
   
-  /* ✅ Footer Top Section */
+  /*  Footer Top Section */
   .footer-top {
     display: flex;
     justify-content: space-between;
@@ -27,7 +27,7 @@
     text-align: center;
   }
   
-  /* ✅ Footer Logo & Title */
+  /*  Footer Logo & Title */
   .footer-about {
     max-width: 300px;
     text-align: left;
@@ -55,7 +55,7 @@
     transform: scale(1.05);
   }
   
-  /* ✅ Footer Links */
+  /*  Footer Links */
   .footer-links ul {
     list-style: none;
     padding: 0;
@@ -81,12 +81,12 @@
     transition: color 0.3s ease-in-out;
   }
   
-  /* 🏆 Hover Effect for Links */
+  /* Hover Effect for Links */
   .footer-links ul li a:hover {
     color: #ffe082;
   }
   
-  /* ✅ Footer Contact */
+  /*  Footer Contact */
   .footer-contact p {
     font-size: 0.9em;
     display: flex;
@@ -95,7 +95,7 @@
     margin-bottom: 5px;
   }
   
-  /* ✅ Social Media Icons */
+  /*  Social Media Icons */
   .social-icons {
     display: flex;
     gap: 15px;
@@ -112,7 +112,7 @@
     transform: scale(1.1);
   }
   
-  /* ✅ Footer Bottom */
+  /*  Footer Bottom */
   .footer-bottom {
     text-align: center;
     padding-top: 20px;
@@ -121,7 +121,7 @@
     width: 100%;
   }
   
-  /* ✅ Responsive Design */
+  /*  Responsive Design */
   @media (max-width: 900px) {
     .footer-top {
       flex-direction: column;
