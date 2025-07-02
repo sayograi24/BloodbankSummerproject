@@ -5,7 +5,7 @@ client = MongoClient("mongodb://localhost:27017/")
 db = client.blood_bank
 donors_collection = db.donors
 
-# ✅ Insert a single donor
+#  Insert a single donor
 donor = {
     "email": "testuser@example.com",
     "name": "Test User",
