@@ -15,7 +15,7 @@ function DonateBlood() {
   });
 
   const [message, setMessage] = useState("");
-  const [recentDonors, setRecentDonors] = useState([]); // ✅ State to store recent donors
+  const [recentDonors, setRecentDonors] = useState([]); 
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
 
@@ -26,7 +26,7 @@ function DonateBlood() {
     }
   }, [token, navigate]);
 
-  // ✅ Fetch recent donors from database
+  //  Fetch recent donors from database
   useEffect(() => {
     const fetchRecentDonors = async () => {
       try {
@@ -63,7 +63,7 @@ function DonateBlood() {
         appointmentTime: "",
       });
 
-      // ✅ Refresh donors list after successful donation
+      //  Refresh donors list after successful donation
       const donorsRes = await axios.get("http://localhost:5000/donors");
       setRecentDonors(donorsRes.data.donors.slice(0, 5));
       
