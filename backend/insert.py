@@ -5,7 +5,7 @@ client = MongoClient("mongodb://localhost:27017/")
 db = client.blood_bank
 testimonials_collection = db.testimonials
 
-# ✅ Testimonials from the HTML File
+#  Testimonials from the HTML File
 testimonials_data = [
     {
         "name": "Kyoto",
@@ -39,6 +39,6 @@ testimonials_data = [
     }
 ]
 
-# ✅ Insert into MongoDB
+#  Insert into MongoDB
 testimonials_collection.insert_many(testimonials_data)
 print("Testimonials added successfully!")
