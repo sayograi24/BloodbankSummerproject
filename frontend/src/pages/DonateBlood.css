@@ -1,4 +1,4 @@
-/* 🔥 Page Layout */
+/*  Page Layout */
 .donate-page {
   display: flex;
   justify-content: space-between;
@@ -7,7 +7,7 @@
   gap: 30px;
 }
 
-/* ✅ Left & Right Sidebars */
+/* Left & Right Sidebars */
 .left-sidebar, .right-sidebar {
   width: 22%;
   background: #fde8e8;
@@ -22,7 +22,7 @@
   transform: translateY(-5px);
 }
 
-/* ✅ Sidebar Titles */
+/*  Sidebar Titles */
 .left-sidebar h3, .right-sidebar h3 {
   font-size: 22px;
   font-weight: bold;
@@ -30,7 +30,7 @@
   margin-bottom: 15px;
 }
 
-/* ✅ Sidebar Lists */
+/* Sidebar Lists */
 .left-sidebar ul, .right-sidebar ul {
   list-style: none;
   padding: 0;
@@ -42,7 +42,7 @@
   margin: 8px 0;
 }
 
-/* ✅ Recent Donors List */
+/*  Recent Donors List */
 .right-sidebar ul {
   padding: 0;
   text-align: left;
@@ -61,7 +61,7 @@
   transform: scale(1.05);
 }
 
-/* ✅ Donation Form Container */
+/* Donation Form Container */
 .donate-container {
   width: 50%;
   background: white;
@@ -71,7 +71,7 @@
   text-align: center;
 }
 
-/* ✅ Form Title */
+/*  Form Title */
 .form-title {
   font-size: 26px;
   font-weight: bold;
@@ -79,7 +79,7 @@
   margin-bottom: 20px;
 }
 
-/* ✅ Input Fields (Fixed Width & Proper Spacing) */
+/*  Input Fields (Fixed Width & Proper Spacing) */
 .donate-form input,
 .donate-form select {
   width: calc(100% - 24px); /* Ensures padding doesn't push it out */
@@ -93,14 +93,14 @@
   box-sizing: border-box;
 }
 
-/* ✅ Fix Dropdown Sizing */
+/*  Fix Dropdown Sizing */
 .donate-form select {
   appearance: none; /* Removes default dropdown styling */
   padding-right: 30px; /* Ensures space for dropdown arrow */
   min-width: auto; /* Ensures it doesn't expand too much */
 }
 
-/* ✅ Input Focus */
+/*  Input Focus */
 .donate-form input:focus,
 .donate-form select:focus {
   border-color: #c62828;
@@ -123,7 +123,7 @@
   gap: 6px;
 }
 
-/* ✅ Submit Button */
+/*  Submit Button */
 .donate-button {
   width: 100%;
   padding: 14px;
@@ -143,7 +143,7 @@
   transform: scale(1.05);
 }
 
-/* ✅ Success / Error Message */
+/*  Success / Error Message */
 .form-message {
   font-size: 16px;
   font-weight: bold;
@@ -151,7 +151,7 @@
   margin-top: 15px;
 }
 
-/* 🔥 Responsive Design */
+/*  Responsive Design */
 @media (max-width: 992px) {
   .donate-page {
       flex-direction: column;
