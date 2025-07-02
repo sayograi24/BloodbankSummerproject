@@ -7,7 +7,7 @@ import logo from "../assets/images/logo.jpg";
 function AboutUs() {
   const [testimonials, setTestimonials] = useState([]);
 
-  // ✅ Fetch testimonials from API
+  //  Fetch testimonials from API
   useEffect(() => {
     const fetchTestimonials = async () => {
       try {
@@ -23,7 +23,7 @@ function AboutUs() {
 
   return (
     <div className="about-us">
-      {/* 🔥 Hero Section */}
+      {/*  Hero Section */}
       <section className="hero-section">
         <div className="hero-content">
           <h1>About Us</h1>
@@ -31,7 +31,7 @@ function AboutUs() {
         </div>
       </section>
 
-      {/* 🔥 Our Mission */}
+      {/*  Our Mission */}
       <section className="mission-section">
         <h2>Our Mission</h2>
         <p>We are dedicated to connecting **life-saving blood donors** with those in need, ensuring a sustainable and efficient blood supply.</p>
@@ -42,7 +42,7 @@ function AboutUs() {
         </div>
       </section>
 
-      {/* 🔥 Why Choose Us? */}
+      {/*  Why Choose Us? */}
       <section className="why-choose">
         <h2>Why Choose Us?</h2>
         <div className="why-cards">
@@ -51,7 +51,7 @@ function AboutUs() {
         </div>
       </section>
 
-      {/* 🔥 Meet Our Team */}
+      {/*  Meet Our Team */}
       <section className="team-section">
         <h2>Meet Our Team</h2>
         <div className="team-members">
@@ -68,7 +68,7 @@ function AboutUs() {
         </div>
       </section>
 
-      {/* 🔥 Dynamic Testimonials Section */}
+      {/*  Dynamic Testimonials Section */}
       <section className="testimonials">
         <h2>What Our Donors Say</h2>
         {testimonials.length > 0 ? (
