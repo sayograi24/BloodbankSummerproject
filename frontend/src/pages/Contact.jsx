@@ -34,14 +34,14 @@ function Contact() {
     <div className="contact">
       <h2>Contact Us</h2>
 
-      {/* 🔥 Contact Details */}
+      {/*  Contact Details */}
       <div className="contact-details">
         <p><FaPhoneAlt /> <a href="tel:+123456789">+123 456 7890</a></p>
         <p><FaEnvelope /> <a href="mailto:sayograi24@gmail.com">sayograi24@gmail.com</a></p>
         <p><FaMapMarkerAlt />Katipur college of management and information technology</p>
       </div>
 
-      {/* 🔥 Contact Form & Map Side by Side */}
+      {/*  Contact Form & Map Side by Side */}
       <div className="contact-container">
         {/* Contact Form (Right Side) */}
         <div className="contact-form">
@@ -101,7 +101,7 @@ function Contact() {
         </div>
       </div>
 
-      {/* 🔥 Working Hours */}
+      {/*  Working Hours */}
       <div className="working-hours">
         <h3><FaClock /> Working Hours</h3>
         <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
@@ -109,7 +109,7 @@ function Contact() {
         <p>Sunday: Closed</p>
       </div>
 
-      {/* 🔥 Frequently Asked Questions */}
+      {/*  Frequently Asked Questions */}
       <div className="faq">
         <h3><FaQuestionCircle /> FAQs</h3>
         <p><strong>Q:</strong> Can I donate blood if I have a cold?</p>
@@ -118,7 +118,7 @@ function Contact() {
         <p><strong>A:</strong> Every 8 weeks for whole blood donation.</p>
       </div>
 
-      {/* 🔥 Social Media Links */}
+      {/*  Social Media Links */}
       <div className="social-media">
         <h3>Follow Us</h3>
         <div className="social-icons">
@@ -128,7 +128,7 @@ function Contact() {
         </div>
       </div>
 
-      {/* 🔥 WhatsApp Chat Button */}
+      {/*  WhatsApp Chat Button */}
       <a href="https://wa.me/(+977)980-3119678" className="whatsapp-button" target="_blank" rel="noopener noreferrer">
         <FaWhatsapp className="whatsapp-icon" /> Chat with Us
       </a>
