@@ -19,4 +19,4 @@ donor = {
 }
 
 result = donors_collection.insert_one(donor)
-print("✅ Donor inserted with ID:", result.inserted_id)
+print(" Donor inserted with ID:", result.inserted_id)
