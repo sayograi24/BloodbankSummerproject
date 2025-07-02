@@ -19,7 +19,7 @@ function AppContent() {
 
   return (
     <>
-      {/* ✅ Hide Navbar in Admin Pages */}
+      {/*  Hide Navbar in Admin Pages */}
       {!isAdminRoute && <Navbar />}
 
       <Routes>
@@ -32,12 +32,12 @@ function AppContent() {
         <Route path="/search" element={<SearchDonors />} />
         <Route path="/donors/:bloodGroup" element={<DonorsList />} />
         
-        {/* 🔥 Admin Routes - No Navbar & Footer */}
+        {/*  Admin Routes - No Navbar & Footer */}
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin/dashboard" element={<ProtectedAdminRoute><AdminDashboard /></ProtectedAdminRoute>} />
       </Routes>
 
-      {/* ✅ Hide Footer in Admin Pages */}
+      {/*  Hide Footer in Admin Pages */}
       {!isAdminRoute && <Footer />}
     </>
   );
